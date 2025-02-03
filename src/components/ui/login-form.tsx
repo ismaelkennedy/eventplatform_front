@@ -10,7 +10,6 @@ const LoginForm = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Traitement du formulaire (par exemple, appel API)
     console.log("Email:", email);
     console.log("Password:", password);
   };

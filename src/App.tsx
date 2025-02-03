@@ -4,6 +4,11 @@ import HomePage from "./pages/home";
 import LoginPage from "./pages/login";
 import RegisterPage from "./pages/register";
 import BoardLayout from "./components/ui/layouts/board";
+import EventPage from "./pages/eventDetail";
+import MyEventPage from "./pages/myEvent";
+import { BgLayout } from "./components/ui/layouts/background";
+import AddEventPage from "./pages/addEvent";
+import EventListPage from "./pages/eventList";
 
 export default function App() {
   return (
@@ -11,9 +16,16 @@ export default function App() {
         <Routes>
           <Route path="/" element={<BoardLayout />}>
             <Route index element={<HomePage />} />
+            <Route element={<BgLayout/>}>
+              <Route path="event/:id_event" element={<EventPage />} />
+              <Route path="myevent" element={<MyEventPage />} />
+              <Route path="event-list" element={<EventListPage />} />
+            </Route>
+            
           </Route>
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
+          <Route path="/add-event" element={<AddEventPage />} />
         </Routes>
     </Router>
   );

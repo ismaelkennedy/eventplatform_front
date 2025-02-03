@@ -23,7 +23,7 @@ const RegisterPage = () => {
 
         {/* Conteneur centré pour le bouton */}
         <div className="w-full flex justify-center mt-6">
-            <Bouton label="Se connecter" />
+            <Bouton label="S'inscrire" />
         </div>
     </div>
   );

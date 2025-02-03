@@ -1,17 +1,14 @@
+import EventsCarousel from "@/components/ui/event-carossel";
+import HeroBanner from "@/components/ui/hero-banner";
 
 
 const HomePage = () => {
   return (
-    <div className="rounded-md bg-gradient-to-b from-[#121111] from-60% to-black to-100% w-max ">
-        <div className="bg-[url(src/assets/Rectangle 17.svg)]">
-            <h1 className="text-red-600">Explorez des événements, vivez des moments...</h1>
-            <h1 className="text-red-600">Explorez des événements, vivez des moments...</h1>
-            <h1 className="text-red-600">Explorez des événements, vivez des moments...</h1>
-            <h1 className="text-red-600">Explorez des événements, vivez des moments...</h1>
-            <h1 className="text-red-600">Explorez des événements, vivez des moments...</h1>
-            <h1 className="text-red-600">Explorez des événements, vivez des moments...</h1>
-            <h1 className="text-red-600">Explorez des événements, vivez des moments...</h1>
-        </div>
+    <div className="rounded-md bg-gradient-to-b from-[#121111] from-60% to-black to-100% ">
+      <div className="mx-40 my-4 flex flex-col items-center justify-center">
+        <HeroBanner />
+        <EventsCarousel />
+      </div>
     </div>
   );
 };

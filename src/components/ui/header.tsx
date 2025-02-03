@@ -5,7 +5,7 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 const Header = () => {
   return (
-    <header className="flex items-center justify-between w-full shadow-md">
+    <header className="pb-5 flex items-center justify-between w-full shadow-md">
       {/* Logo */}
       <img src={logo} alt="MirEnvent Logo" className="" />
 

@@ -1,4 +1,4 @@
-import logo from "@/assets/LogoM.svg"; // Ajustez le chemin d'import en fonction de votre structure
+import logo from "@/assets/LogoM.svg"; 
 import Bouton from "@/components/ui/bouton";
 import LoginForm from "@/components/ui/login-form";
 
@@ -15,13 +15,13 @@ const LoginPage = () => {
                 />
             </div>
 
-            {/* Section du formulaire */}
+            
             <div className="flex-1 flex items-center justify-center">
                 <LoginForm />
             </div>
         </div>
 
-        {/* Conteneur centré pour le bouton */}
+        
         <div className="w-full flex justify-center mt-6">
             <Bouton label="Se connecter" />
         </div>
