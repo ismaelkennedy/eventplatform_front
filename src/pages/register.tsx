@@ -1,5 +1,4 @@
 import logo from "@/assets/LogoM.svg"; // Ajustez le chemin d'import en fonction de votre structure
-import Bouton from "@/components/ui/bouton";
 import RegisterForm from "@/components/ui/register-form"
 
 const RegisterPage = () => {
@@ -21,10 +20,7 @@ const RegisterPage = () => {
             </div>
         </div>
 
-        {/* Conteneur centré pour le bouton */}
-        <div className="w-full flex justify-center mt-6">
-            <Bouton label="S'inscrire" />
-        </div>
+        
     </div>
   );
 };

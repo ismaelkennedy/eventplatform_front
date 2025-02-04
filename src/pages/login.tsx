@@ -1,5 +1,4 @@
 import logo from "@/assets/LogoM.svg"; 
-import Bouton from "@/components/ui/bouton";
 import LoginForm from "@/components/ui/login-form";
 
 const LoginPage = () => {
@@ -22,9 +21,7 @@ const LoginPage = () => {
         </div>
 
         
-        <div className="w-full flex justify-center mt-6">
-            <Bouton label="Se connecter" />
-        </div>
+       
     </div>
   );
 };
