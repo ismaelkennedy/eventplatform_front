@@ -25,7 +25,7 @@ const LoginForm = () => {
 
         console.log("Connexion réussie :", response.data);
         alert("Connexion réussie !");
-        navigate("/dashboard"); // Redirection après connexion
+        navigate("/"); // Redirection après connexion
       }
     } catch (error: any) {
       console.error("Erreur de connexion :", error);

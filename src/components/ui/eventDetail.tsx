@@ -8,9 +8,10 @@ interface EventHeaderProps {
     day: string
     month: string
   }
+  location:string
 }
 
-const EventHeader = ({ image, type, title, date }: EventHeaderProps) => {
+const EventHeader = ({ image, type, title, date ,location}: EventHeaderProps) => {
   return (
     <div className="relative w-full h-[300px] rounded-2xl overflow-hidden">
       <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${image})` }} />
@@ -19,7 +20,7 @@ const EventHeader = ({ image, type, title, date }: EventHeaderProps) => {
       <div className="absolute inset-0 flex flex-col">
         <div className="flex-1 flex items-start p-4">
           <div className="w-1/2">
-            <Backbutton />
+          <h1 className="text-white text-1xl font-bold mt-2">{location}</h1>
           </div>
           <div className="w-1/2 flex justify-end">
             <div className="bg-white/90 rounded-xl p-2 text-center min-w-[60px]">

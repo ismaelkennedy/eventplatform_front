@@ -1,20 +1,20 @@
+import { Link } from "react-router-dom";
+
 interface EventCardProps {
+  id: number;
   date: {
-    day: string
-    month: string
-  }
-  title: string
-  type: string
-  image: string
+    day: string;
+    month: string;
+  };
+  title: string;
+  type: string;
+  image: string;
 }
 
-const EventCard = ({ date, title, type, image }: EventCardProps) => {
+const EventCard = ({ id, date, title, type, image }: EventCardProps) => {
   return (
-    <div className="relative w-[300px] h-[400px] rounded-2xl overflow-hidden group cursor-pointer">
-      <div
-        className="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110"
-        style={{ backgroundImage: `url(${image})` }}
-      />
+    <Link to={`/event/${id}`} className="relative w-[300px] h-[400px] rounded-2xl overflow-hidden group cursor-pointer">
+      <div className="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110" style={{ backgroundImage: `url(${image})` }} />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
 
       {/* Date badge */}
@@ -28,9 +28,8 @@ const EventCard = ({ date, title, type, image }: EventCardProps) => {
         <span className="text-gray-300 text-sm uppercase tracking-wider">{type}</span>
         <h3 className="text-white text-2xl font-bold mt-2">{title}</h3>
       </div>
-    </div>
-  )
-}
+    </Link>
+  );
+};
 
-export default EventCard
-
+export default EventCard;
