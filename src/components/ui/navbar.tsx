@@ -34,7 +34,7 @@ export default function Navbar() {
       {userRole && (
         <>
           {/* Dashboard → Affiché pour "participant" et "organisateur" */}
-          <Link to="/dashboard" className="p-2 hover:bg-gray-800 rounded-lg transition-colors">
+          <Link to="/myEvent" className="p-2 hover:bg-gray-800 rounded-lg transition-colors">
             <LayoutDashboard className="w-6 h-6" />
           </Link>
 
