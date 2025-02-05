@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import logo from "@/assets/Group 17.svg"; // Assurez-vous du bon chemin
+import logo from "@/assets/Group 17.svg"; 
 import SearchBar from "@/components/ui/search";
 
 const Header = () => {
