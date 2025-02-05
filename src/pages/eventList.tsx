@@ -1,5 +1,7 @@
 import { useState } from "react"
 import { Categories } from "@/components/ui/tag"
+import MyComponent from "@/components/ui/card-eventList"
+
 
 
 
@@ -14,9 +16,12 @@ const categories = [
 export default function EventListPage() {
     const [activeCategory, setActiveCategory] = useState("arts")
   return (
-    <div className='flex items-center justify-center'>
-      <Categories categories={categories} activeCategory={activeCategory} onCategoryChange={setActiveCategory} />
-      {/* Reste de votre contenu */}
+    <div className="flex flex-col items-center">
+      <div className='pb-10'>
+        <Categories categories={categories} activeCategory={activeCategory} onCategoryChange={setActiveCategory} />
+        
+      </div>
+      <MyComponent/>
     </div>
   )
 }
