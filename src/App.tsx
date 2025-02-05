@@ -21,12 +21,13 @@ export default function App() {
               <Route path="event/:id" element={<EventPage />} />
               <Route path="myevent" element={<MyEventPage />} />
               <Route path="event-list" element={<EventListPage />} />
+              <Route path="/add-event" element={<AddEventPage />} />
             </Route>
             
           </Route>
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
-          <Route path="/add-event" element={<AddEventPage />} />
+          
         </Routes>
     </Router>
   );

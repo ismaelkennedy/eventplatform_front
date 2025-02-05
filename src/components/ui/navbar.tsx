@@ -45,7 +45,7 @@ export default function Navbar() {
 
           {/* "Plus" → Seulement pour les organisateurs */}
           {userRole === "organisateur" && (
-            <Link to="/settings" className="p-2 hover:bg-gray-800 rounded-lg transition-colors">
+            <Link to="/add-event" className="p-2 hover:bg-gray-800 rounded-lg transition-colors">
               <Plus className="w-6 h-6" />
             </Link>
           )}

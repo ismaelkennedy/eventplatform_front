@@ -7,11 +7,13 @@ const LoginPage = () => {
         <div className="flex flex-row items-center justify-center w-full">
             {/* Section de l'image */}
             <div className="flex-1 flex items-center justify-center">
-                <img
-                src={logo}
-                alt="MirEnvent Logo"
-                className="max-w-full h-auto"
-                />
+                <a href="/">
+                  <img
+                  src={logo}
+                  alt="MirEnvent Logo"
+                  className="max-w-full h-auto"
+                  />
+                </a>
             </div>
 
             
