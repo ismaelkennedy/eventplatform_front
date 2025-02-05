@@ -25,7 +25,7 @@ export default function Navbar() {
 
       {/* Lien Menu → Seulement pour les non connectés et les participants */}
       {(!userRole || userRole === "participant") && (
-        <Link to="/menu" className="p-2 hover:bg-gray-800 rounded-lg transition-colors">
+        <Link to="/event-list" className="p-2 hover:bg-gray-800 rounded-lg transition-colors">
           <Menu className="w-6 h-6" />
         </Link>
       )}
