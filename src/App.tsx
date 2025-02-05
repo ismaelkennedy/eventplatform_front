@@ -7,8 +7,9 @@ import BoardLayout from "./components/ui/layouts/board";
 import EventPage from "./pages/eventDetail";
 import MyEventPage from "./pages/myEvent";
 import { BgLayout } from "./components/ui/layouts/background";
-import AddEventPage from "./pages/addEvent";
+
 import EventListPage from "./pages/eventList";
+import { AddEventPage } from "./pages/addEvent";
 
 export default function App() {
   return (

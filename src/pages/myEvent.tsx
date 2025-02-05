@@ -1,5 +1,7 @@
 // import { PageHeader } from "@/components/ui/papa"
-import { CardEventList } from "@/components/ui/card-eventList"
+
+import CustomRectangle from "@/components/ui/card-event-my-event"
+
 
 
 
@@ -46,9 +48,9 @@ export default function MyEventPage() {
           A venir ...
           <div className="mt-1 h-0.5 w-12 bg-white" />
         </h1>
-        <div className="flex flex-col gap-8 px-52 py-6">
+        <div className="flex flex-col gap-8 px-52 py-6 items-center justify-center">
             {events.map((event, index) => (
-            <CardEventList key={index} {...event} />
+            <CustomRectangle key={index} {...event} />
             ))}
         </div>
       
