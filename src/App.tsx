@@ -7,6 +7,8 @@ import BoardLayout from "./components/ui/layouts/board";
 import EventPage from "./pages/eventDetail";
 import MyEventPage from "./pages/myEvent";
 import { BgLayout } from "./components/ui/layouts/background";
+import DashboardOrga from "./pages/dashboardOrga";
+import ParticipantOrga from "./pages/participantOrga";
 
 import EventListPage from "./pages/eventList";
 import { AddEventPage } from "./pages/addEvent";
@@ -21,6 +23,9 @@ export default function App() {
               <Route path="event/:id_event" element={<EventPage />} />
               <Route path="myevent" element={<MyEventPage />} />
               <Route path="event-list" element={<EventListPage />} />
+              <Route path="dashboard" element={<DashboardOrga />} />
+              <Route path="participant" element={<ParticipantOrga/>} />
+              
             </Route>
             
           </Route>
