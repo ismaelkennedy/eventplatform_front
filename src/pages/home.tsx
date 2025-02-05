@@ -4,7 +4,7 @@ import HeroBanner from "@/components/ui/hero-banner";
 
 const HomePage = () => {
   return (
-    <div className="rounded-md bg-gradient-to-b from-[#121111] from-60% to-black to-100% ">
+    <div className="flex flex-1 rounded-md bg-gradient-to-b from-[#121111] from-60% to-black to-100% ">
       <div className="mx-40 my-4 flex flex-col items-center justify-center">
         <HeroBanner />
         <EventsCarousel />
