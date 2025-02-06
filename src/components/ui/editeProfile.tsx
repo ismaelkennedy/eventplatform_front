@@ -13,6 +13,12 @@ const EditProfile: React.FC = () => {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [error, setError] = useState('');
 
+  // Typage explicite de `isEditing` avec `keyof`
+  const [isEditing, setIsEditing] = useState<{ username: boolean; email: boolean }>({
+    username: false,
+    email: false,
+  });
+
   // Gestion de l'upload d'avatar
   const handleAvatarChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
@@ -34,7 +40,7 @@ const EditProfile: React.FC = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-black text-white">
       <div className="max-w-2xl w-full p-8 rounded-2xl shadow-xl border border-white/20">
-        <h2 className="text-2xl font-bold text-center mb-4">Modifier le Profil</h2> {/* Titre centré */}
+        <h2 className="text-2xl font-bold text-center mb-4">Modifier le Profil</h2>
         
         {/* Avatar */}
         <div className="flex flex-col items-center mb-4">
@@ -47,9 +53,9 @@ const EditProfile: React.FC = () => {
         
         {/* Champs modifiables */}
         <div className="space-y-4">
-          {[{ label: 'Nom d’utilisateur', value: username, setter: setUsername },
-            { label: 'Email', value: email, setter: setEmail }
-          ].map(({ label, value, setter }, index) => (
+          {[{ label: 'Nom d’utilisateur', value: username, setter: setUsername, field: 'username' },
+            { label: 'Email', value: email, setter: setEmail, field: 'email' }
+          ].map(({ label, value, setter, field }, index) => (
             <div key={index} className="p-4 rounded-xl bg-black border border-white/20">
               <label className="text-xs font-regular text-gray-400">{label}</label>
               <div className="flex items-center justify-between mt-1">
@@ -58,8 +64,12 @@ const EditProfile: React.FC = () => {
                   value={value}
                   onChange={(e) => setter(e.target.value)}
                   className="bg-transparent border-none focus:outline-none text-white text-lg font-bold w-full"
+                  readOnly={!isEditing[field]} // Si en mode édition, permettre la modification
                 />
-                <Pencil className="w-5 h-5 text-gray-400 cursor-pointer hover:text-blue-400" />
+                <Pencil
+                  className="w-5 h-5 text-gray-400 cursor-pointer hover:text-blue-400"
+                  onClick={() => setIsEditing(prev => ({ ...prev, [field]: true }))} // Activer l'édition
+                />
               </div>
             </div>
           ))}
@@ -101,4 +111,3 @@ const EditProfile: React.FC = () => {
 };
 
 export default EditProfile;
-
