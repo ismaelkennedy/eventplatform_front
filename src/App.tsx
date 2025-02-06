@@ -9,6 +9,7 @@ import MyEventPage from "./pages/myEvent";
 import { BgLayout } from "./components/ui/layouts/background";
 import DashboardOrga from "./pages/dashboardOrga";
 import ParticipantOrga from "./pages/participantOrga";
+import UpdateProfile from "./pages/updateProfile";
 
 import EventListPage from "./pages/eventList";
 import { AddEventPage } from "./pages/addEvent";
@@ -25,6 +26,7 @@ export default function App() {
               <Route path="event-list" element={<EventListPage />} />
               <Route path="dashboard" element={<DashboardOrga />} />
               <Route path="participant" element={<ParticipantOrga/>} />
+              <Route path="update" element={<UpdateProfile/>} />
               
             </Route>
             
