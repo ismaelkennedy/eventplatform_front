@@ -28,41 +28,6 @@ const Header = () => {
       <Link to="/">
         <img src={logo || "/placeholder.svg"} alt="MirEnvent Logo" />
       </Link>
-  }, []);
-  
-  const handleLogout = async () => {
-   
-    try {
-      const token = localStorage.getItem("token");
-      if (!token) {
-        console.error("Aucun token trouvé");
-        return;
-      }
-  
-      const response = await axios.post("http://127.0.0.1:8000/api/logout", {}, {
-        headers: {
-          Authorization: `Bearer ${token}`, 
-        },
-      });
-  
-  
-      // Supprimer les informations d'utilisateur
-      localStorage.removeItem("token");
-      localStorage.removeItem("user");
-  
-      // Redirection vers la page de connexion
-      navigate("/login")
-    } catch (error: any) {
-      
-console.error("Erreur lors de la déconnexion :", error.response?.data);
-    }
-  };
-  
-
-  return (
-    <header className="pb-5 flex items-center justify-between w-full shadow-md px-4">
-      {/* Logo */}
-      <img src={logo} alt="MirEnvent Logo" className="h-10" />
 
       {/* Barre de recherche */}
       <SearchBar />
@@ -101,4 +66,3 @@ console.error("Erreur lors de la déconnexion :", error.response?.data);
 }
 
 export default Header
-

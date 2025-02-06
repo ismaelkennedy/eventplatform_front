@@ -6,6 +6,8 @@ import RegisterPage from "./pages/register";
 import BoardLayout from "./components/ui/layouts/board";
 import EventPage from "./pages/eventDetail";
 import MyEventPage from "./pages/myEvent";
+import EventRegister from "./pages/eventRegister";
+
 import { BgLayout } from "./components/ui/layouts/background";
 
 import EventListPage from "./pages/eventList";
@@ -20,6 +22,8 @@ export default function App() {
             <Route element={<BgLayout/>}>
               <Route path="event/:id" element={<EventPage />} />
               <Route path="myevent" element={<MyEventPage />} />
+              <Route path="eventRegister" element={<EventRegister />} />
+              
               <Route path="event-list" element={<EventListPage />} />
               <Route path="/add-event" element={<AddEventPage />} />
             </Route>
