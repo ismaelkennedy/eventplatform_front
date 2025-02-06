@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom"; // Pour la redirection
+import { useNavigate } from "react-router-dom";
+// import { Ticket } from 'lucide-react';
 
 interface Event {
     id: number;
@@ -27,27 +28,40 @@ const MyComponent: React.FC<MyComponentProps> = ({ categoryId }) => {
     }, [categoryId]);
 
     return (
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center justify-center min-h-screen p-6">
             {events.length === 0 ? (
-                <p className="text-white">Aucun événement trouvé.</p>
+                <p className="text-white text-center">Aucun événement trouvé.</p>
             ) : (
                 events.map((event) => (
-                    <div
-                        key={event.id}
-                        className="flex cursor-pointer"
-                        onClick={() => navigate(`/event/${event.id}`)}
-                        style={{ width: '500px', height: '84px', position: 'relative' }}
-                    >
-                        <img
-                            src={event.image}
+                  <div
+                    key={event.id}
+                    className="relative w-[420.6px] h-[96.7px] rounded-lg flex justify-between p-2 shadow-xl my-4 cursor-pointer"
+                    onClick={() => navigate(`/event/${event.id}`)}
+                   >
+                        {/* Partie gauche avec l'icône et les infos */}
+                        <div className="flex items-center space-x-1 absolute">
+                            {/* <Ticket className="mr-1 text-[#439DFE] rotate-90" width="50" height="50" /> */}
+                            <div className="flex flex-col space-y-1">
+                              <h2 className="text-lg font-semibold text-white first-letter:uppercase" 
+                                  style={{ fontFamily: 'Inter, sans-serif', fontWeight: 'bold', fontSize: '18px', lineHeight: '24px' }}>
+                                {event.title}
+                              </h2>
+                              <p className="text-sm text-white">
+                                {new Date(event.date).toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })}
+                              </p>
+                              <p className="text-sm text-white/50 first-letter:uppercase">
+                                {event.location}
+                              </p>
+                            </div>
+                        </div>
+
+                        {/* Partie droite avec l'image */}
+                        <div className="absolute right-0 top-0 w-[141.6px] h-[96.7px] ">
+                          <img 
+                            src={event.image} 
                             alt={event.title}
-                            style={{ width: '99px', height: '82px' }}
-                            className="object-cover rounded-xl"
-                        />
-                        <div className="ml-4 relative">
-                            <div className="text-white text-sm font-regular">{event.date}</div>
-                            <div className="text-white text-lg font-bold">{event.title}</div>
-                            <div className="text-white font-regular">{event.location}</div>
+                            className="w-full h-full object-cover rounded-r-lg border opacity-50"
+                          />
                         </div>
                     </div>
                 ))

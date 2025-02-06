@@ -11,7 +11,10 @@ import EventRegister from "./pages/eventRegister";
 import { BgLayout } from "./components/ui/layouts/background";
 
 import EventListPage from "./pages/eventList";
+import UpdatePage from "./pages/updateProfile";
+import HomePageOrga from "./pages/homeOrga";
 import { AddEventPage } from "./pages/addEvent";
+
 
 export default function App() {
   return (
@@ -19,13 +22,15 @@ export default function App() {
         <Routes>
           <Route path="/" element={<BoardLayout />}>
             <Route index element={<HomePage />} />
+            <Route path="/home-orga" element={<HomePageOrga />} />
             <Route element={<BgLayout/>}>
               <Route path="event/:id" element={<EventPage />} />
               <Route path="myevent" element={<MyEventPage />} />
               <Route path="eventRegister" element={<EventRegister />} />
               
               <Route path="event-list" element={<EventListPage />} />
-              <Route path="/add-event" element={<AddEventPage />} />
+              <Route path="add-event" element={<AddEventPage />} />
+              <Route path="update" element={<UpdatePage/>} />
             </Route>
             
           </Route>
