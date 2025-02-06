@@ -19,7 +19,7 @@ export default function Navbar() {
   return (
     <nav className="rounded-md bg-gradient-to-b from-[#121111] from-60% to-black to-100% flex flex-col gap-6 items-center px-2 py-2">
       {/* Lien accessible à tous */}
-      <Link to="/" className="p-2 hover:bg-gray-800 rounded-lg transition-colors">
+      <Link to={userRole === "organisateur" ? "/home-orga" : "/"} className="p-2 hover:bg-gray-800 rounded-lg transition-colors">
         <Home className="w-6 h-6" />
       </Link>
 
@@ -39,7 +39,7 @@ export default function Navbar() {
           </Link>
 
           {/* Profil → Affiché pour "participant" et "organisateur" */}
-          <Link to="/profile" className="p-2 hover:bg-gray-800 rounded-lg transition-colors">
+          <Link to="/update" className="p-2 hover:bg-gray-800 rounded-lg transition-colors">
             <User className="w-6 h-6" />
           </Link>
 

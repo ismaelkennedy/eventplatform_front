@@ -1,17 +1,17 @@
-import { useState } from "react"
-import { ChevronDown, ImageIcon } from "lucide-react"
+import { useState } from "react";
+import { ChevronDown, ImageIcon } from "lucide-react";
 
 export interface EventFormData {
-  name: string
-  category: string
-  date: string
-  time: string
-  image: File | null
-  description: string
+  name: string;
+  category: string;
+  date: string;
+  time: string;
+  image: File | null;
+  description: string;
 }
 
 interface EventFormProps {
-  onSubmit: (data: EventFormData) => void
+  onSubmit: (data: EventFormData) => void;
 }
 
 export function AddEventForm({ onSubmit }: EventFormProps) {
@@ -22,20 +22,22 @@ export function AddEventForm({ onSubmit }: EventFormProps) {
     time: "",
     image: null,
     description: "",
-  })
+  });
 
-  const categories = ["Musique", "Business", "Food & Drink", "Arts", "Community"]
+  const categories = ["Musique", "Business", "Food & Drink", "Arts", "Community"];
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    onSubmit(formData)
-  }
+    e.preventDefault();
+    onSubmit(formData); // Soumettre les données via la fonction onSubmit
+      
+  };
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
-      setFormData((prev) => ({ ...prev, image: e.target.files![0] }))
+      setFormData((prev) => ({ ...prev, image: e.target.files![0] }));
     }
-  }
+  };
+  
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-6 p-6 text-white">
@@ -59,7 +61,7 @@ export function AddEventForm({ onSubmit }: EventFormProps) {
             className="w-full bg-transparent border-b border-white/20 pb-2 outline-none focus:border-white/40 transition-colors appearance-none"
           >
             <option value="" disabled className="bg-black">
-              Sélétionner une catégorie
+              Sélectionner une catégorie
             </option>
             {categories.map((category) => (
               <option key={category} value={category} className="bg-black">
@@ -120,6 +122,5 @@ export function AddEventForm({ onSubmit }: EventFormProps) {
         Ajouter
       </button>
     </form>
-  )
+  );
 }
-

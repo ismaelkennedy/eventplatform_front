@@ -16,14 +16,23 @@ const LoginForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setError("")
-
+  
     try {
       const response = await api.post("/login", { email, password })
-
+  
       if (response.data.success) {
         localStorage.setItem("token", response.data.token)
         localStorage.setItem("user", JSON.stringify(response.data.user))
-        navigate("/")
+        
+        // Récupère le rôle de l'utilisateur
+        const userRole = response.data.user.role
+  
+        // Redirige en fonction du rôle de l'utilisateur
+        if (userRole === "organisateur") {
+          navigate("/home-orga")
+        } else {
+          navigate("/")
+        }
       }
     } catch (error: any) {
       console.error("Erreur de connexion :", error)
