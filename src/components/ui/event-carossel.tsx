@@ -9,6 +9,7 @@ interface Event {
   date: string;
   image: string;
   categories: { name: string }[]; // Récupérer le nom des catégories
+  startTime: string;
 }
 
 const EventsCarousel = () => {
@@ -48,6 +49,7 @@ const EventsCarousel = () => {
             {events.map((event) => (
               <EventCard
                 key={event.id}
+                id={event.id}  
                 date={{
                   day: new Date(event.date).getDate().toString(),
                   month: new Date(event.date).toLocaleString("fr-FR", { month: "long" }), // Convertir la date
@@ -55,6 +57,7 @@ const EventsCarousel = () => {
                 title={event.title}
                 type={event.categories.length > 0 ? event.categories[0].name.toUpperCase() : "ÉVÉNEMENT"}
                 image={event.image}
+                
               />
             ))}
           </div>

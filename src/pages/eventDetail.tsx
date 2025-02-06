@@ -69,7 +69,7 @@ export default function EventPage() {
           date={formatDate(eventData.date)} // 🔥 Convertit la date en { day, month }
           location={eventData.location}
         />
-        <EventInfo startTime={eventData.startTime} description={eventData.description} />
+        <EventInfo startTime={eventData.date.split(" ")[1]}  description={eventData.description} />
         <div className="w-full flex justify-center mt-6">
           <Bouton label="Participer" />
         </div>
