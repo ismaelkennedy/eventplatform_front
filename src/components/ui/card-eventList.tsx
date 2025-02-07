@@ -28,45 +28,44 @@ const MyComponent: React.FC<MyComponentProps> = ({ categoryId }) => {
     }, [categoryId]);
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen p-6">
-            {events.length === 0 ? (
-                <p className="text-white text-center">Aucun événement trouvé.</p>
-            ) : (
-                events.map((event) => (
-                  <div
-                    key={event.id}
-                    className="relative w-[420.6px] h-[96.7px] rounded-lg flex justify-between p-2 shadow-xl my-4 cursor-pointer"
-                    onClick={() => navigate(`/event/${event.id}`)}
-                   >
-                        {/* Partie gauche avec l'icône et les infos */}
-                        <div className="flex items-center space-x-1 absolute">
-                            {/* <Ticket className="mr-1 text-[#439DFE] rotate-90" width="50" height="50" /> */}
-                            <div className="flex flex-col space-y-1">
-                              <h2 className="text-lg font-semibold text-white first-letter:uppercase" 
-                                  style={{ fontFamily: 'Inter, sans-serif', fontWeight: 'bold', fontSize: '18px', lineHeight: '24px' }}>
-                                {event.title}
-                              </h2>
-                              <p className="text-sm text-white">
-                                {new Date(event.date).toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })}
-                              </p>
-                              <p className="text-sm text-white/50 first-letter:uppercase">
-                                {event.location}
-                              </p>
-                            </div>
-                        </div>
+      <div className="flex flex-col items-center py-6 space-y-4">
+      {events.length === 0 ? (
+          <p className="text-white text-center">Aucun événement trouvé.</p>
+      ) : (
+          events.map((event) => (
+              <div
+                  key={event.id}
+                  className="relative w-[420.6px] h-[96.7px] rounded-lg p-2 shadow-xl cursor-pointer"
+                  onClick={() => navigate(`/event/${event.id}`)}
+              >
+                  {/* Partie gauche avec l'icône et les infos */}
+                  <div className="flex items-center space-x-1">
+                      <div className="flex flex-col space-y-1">
+                          <h2 className="text-lg font-semibold text-white first-letter:uppercase" 
+                              style={{ fontFamily: 'Inter, sans-serif', fontWeight: 'bold', fontSize: '18px', lineHeight: '24px' }}>
+                              {event.title}
+                          </h2>
+                          <p className="text-sm text-white">
+                              {new Date(event.date).toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })}
+                          </p>
+                          <p className="text-sm text-white/50 first-letter:uppercase">
+                              {event.location}
+                          </p>
+                      </div>
+                  </div>
 
-                        {/* Partie droite avec l'image */}
-                        <div className="absolute right-0 top-0 w-[141.6px] h-[96.7px] ">
-                          <img 
-                            src={event.image} 
-                            alt={event.title}
-                            className="w-full h-full object-cover rounded-r-lg border opacity-50"
-                          />
-                        </div>
-                    </div>
-                ))
-            )}
-        </div>
+                  {/* Partie droite avec l'image */}
+                  <div className="absolute right-0 top-0 w-[141.6px] h-[96.7px]">
+                      <img 
+                          src={event.image} 
+                          alt={event.title}
+                          className="w-full h-full object-cover rounded-r-lg border"
+                      />
+                  </div>
+              </div>
+          ))
+      )}
+      </div>
     );
 };
 

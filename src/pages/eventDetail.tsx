@@ -104,27 +104,28 @@ export default function EventPage() {
   const formatDate = (dateString: string) => {
     const dateObj = new Date(dateString);
     const months = [
-      "Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
-      "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"
+      "JAN", "FEV", "MARS", "AVR", "MAI", "JUI",
+      "JUIL", "AOUT", "SEPT", "OCT", "NOV", "DEC"
     ];
     return {
       day: dateObj.getDate().toString(),
       month: months[dateObj.getMonth()],
     };
   };
+  
 
   return (
     <div className="rounded-md bg-gradient-to-b from-[#121111] from-60% to-black to-100% flex-1">
-      <div className="mx-40 my-4 flex flex-col items-center justify-center">
+      <div className="mx-40 my-10 flex flex-col items-center justify-center">
         <EventHeader
           image={eventData.image}
           type={eventData.type}
           title={eventData.title}
-          date={formatDate(eventData.date)} // 🔥 Convertit la date en { day, month }
+          date={formatDate(eventData.date)} 
           location={eventData.location}
         />
         <EventInfo startTime={eventData.date.split(" ")[1]} description={eventData.description} />
-        <div className="w-full flex justify-center mt-6">
+        <div className="w-full flex justify-center mt-6 pb-5">
           <Bouton 
             label={isParticipating ? "Vous participez déjà" : "Participer"} 
             onClick={handleParticipation} 

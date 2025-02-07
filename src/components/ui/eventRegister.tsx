@@ -38,7 +38,6 @@ const EventRegister = () => {
         setEvents(
           response.data.events
             .sort((a: Event, b: Event) => new Date(b.date).getTime() - new Date(a.date).getTime())
-            .slice(0, 5)
         );
       } else {
         setError("Aucun événement trouvé.");
@@ -73,8 +72,8 @@ const EventRegister = () => {
   };
 
   return (
-    <div className="flex flex-col items-center">
-      <h2 className="text-2xl font-bold text-white mb-6">Mes événements</h2>
+    <div className="flex flex-col items-center justify-center">
+      <h2 className="text-2xl font-bold text-white mb-6 text-center">Mes événements</h2>
 
       {loading ? (
         <p className="text-white">Chargement...</p>
@@ -83,29 +82,30 @@ const EventRegister = () => {
       ) : events.length === 0 ? (
         <p className="text-white">Aucun événement trouvé.</p>
       ) : (
-        events.map((event) => (
-          <div
-            key={event.id}
-            className="flex items-center cursor-pointer hover:bg-white/10 p-2 rounded-lg transition w-[500px] h-[84px]"
-          >
-            <img
-              src={event.image}
-              alt={event.title}
-              className="w-[99px] h-[82px] object-cover rounded-xl"
-              onClick={() => navigate(`/event/${event.id}`)}
-            />
-            <div className="ml-4 flex-1" onClick={() => navigate(`/event/${event.id}`)}>
-              <div className="text-gray-400 text-sm">{new Date(event.date).toLocaleDateString("fr-FR")}</div>
-              <div className="text-white text-lg font-bold">{event.title}</div>
-            </div>
-
-            {/* Icône de désinscription */}
-            <XCircle
-              className="w-6 h-6 text-red-500 hover:text-red-700 transition cursor-pointer"
-              onClick={() => handleUnregister(event.id)}
-            />
-          </div>
-        ))
+        <div className="flex flex-col items-center gap-4 w-full max-w-lg">
+  {events.map((event) => (
+    <div
+      key={event.id}
+      className="flex items-center cursor-pointer hover:bg-white/10 p-2 rounded-lg transition w-full"
+    >
+      <img
+        src={event.image}
+        alt={event.title}
+        className="w-[99px] h-[82px] object-cover rounded-xl"
+        onClick={() => navigate(`/event/${event.id}`)}
+      />
+      <div className="ml-4 flex-1" onClick={() => navigate(`/event/${event.id}`)}>
+        <div className="text-gray-400 text-sm">{new Date(event.date).toLocaleDateString("fr-FR")}</div>
+        <div className="text-white text-lg font-bold">{event.title}</div>
+      </div>
+      <XCircle
+        className="w-6 h-6 text-red-500 hover:text-red-700 transition cursor-pointer"
+        onClick={() => handleUnregister(event.id)}
+      />
+     </div>
+      ))}
+      </div>
+        
       )}
     </div>
   );

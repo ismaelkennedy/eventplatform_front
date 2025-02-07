@@ -20,10 +20,10 @@ const EventHeader = ({ image, type, title, date ,location}: EventHeaderProps) =>
       <div className="absolute inset-0 flex flex-col">
         <div className="flex-1 flex items-start p-4">
           <div className="w-1/2">
-          <h1 className="text-white text-1xl font-bold mt-2">{location}</h1>
+          
           </div>
           <div className="w-1/2 flex justify-end">
-            <div className="bg-white/90 rounded-xl p-2 text-center min-w-[60px]">
+            <div className="bg-white/75 rounded-xl p-2 text-center min-w-[60px]">
               <span className="block text-gray-600 text-sm">{date.month}</span>
               <span className="block text-black font-bold text-xl">{date.day}</span>
             </div>
@@ -34,6 +34,7 @@ const EventHeader = ({ image, type, title, date ,location}: EventHeaderProps) =>
           <div className="w-1/2">
             <span className="text-gray-300 text-sm uppercase tracking-wider">{type}</span>
             <h1 className="text-white text-3xl font-bold mt-2">{title}</h1>
+            <h1 className="text-gray-500 text-xl font-extralight">{location}</h1>
           </div>
           <div className="w-1/2">{/* You can add additional content here if needed */}</div>
         </div>

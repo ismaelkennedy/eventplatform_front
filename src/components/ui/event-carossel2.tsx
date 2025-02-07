@@ -37,7 +37,7 @@ const EventsCarousel2 = () => {
         setEvents(
           response.data.data
             .sort((a: Event, b: Event) => new Date(b.date).getTime() - new Date(a.date).getTime())
-            .slice(0, 5)
+            
         );
       }
     } catch (error) {
@@ -76,7 +76,7 @@ const EventsCarousel2 = () => {
         events.map((event) => (
           <div
             key={event.id}
-            className="flex items-center justify-between bg-gray-800 p-2 rounded-lg w-[500px] mb-2"
+            className="flex items-center justify-between shadow-2xl rounded-lg w-[500px] mb-5"
           >
             <div className="flex items-center cursor-pointer" onClick={() => navigate(`/event/${event.id}`)}>
               <img
@@ -85,8 +85,9 @@ const EventsCarousel2 = () => {
                 className="w-[99px] h-[82px] object-cover rounded-xl"
               />
               <div className="ml-4">
-                <div className="text-gray-400 text-sm">{new Date(event.date).toLocaleDateString("fr-FR")}</div>
                 <div className="text-white text-lg font-bold">{event.title}</div>
+                <div className="text-gray-400 text-sm">{new Date(event.date).toLocaleDateString("fr-FR")}</div>
+                
               </div>
             </div>
 
