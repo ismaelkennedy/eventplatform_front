@@ -1,4 +1,4 @@
-import EditProfile from "../components/ui/editProfil"; // Assure-toi que le chemin est correct
+import EditProfile from "../components/ui/editProfil"; 
 
 const UpdatePage: React.FC = () => {
   return (

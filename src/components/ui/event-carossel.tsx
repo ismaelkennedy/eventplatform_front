@@ -1,14 +1,14 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import EventCard from "./card";
-import api from "@/api/axiosConfig"; // Assure-toi que api est bien configuré avec l'URL de ton backend
+import api from "@/api/axiosConfig"; 
 
 interface Event {
   id: number;
   title: string;
   date: string;
   image: string;
-  categories: { name: string }[]; // Récupérer le nom des catégories
+  categories: { name: string }[]; 
   startTime: string;
 }
 
@@ -19,7 +19,7 @@ const EventsCarousel = () => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await api.get("/events"); // Appelle ton API Laravel
+        const response = await api.get("/events"); 
         if (response.data.success) {
           const sortedEvents = response.data.data
             .sort((a: Event, b: Event) => new Date(b.date).getTime() - new Date(a.date).getTime()) // Trier du plus récent au plus ancien
@@ -52,7 +52,7 @@ const EventsCarousel = () => {
                 id={event.id}  
                 date={{
                   day: new Date(event.date).getDate().toString(),
-                  month: new Date(event.date).toLocaleString("fr-FR", { month: "long" }), // Convertir la date
+                  month: new Date(event.date).toLocaleString("fr-FR", { month: "long" }), 
                 }}
                 title={event.title}
                 type={event.categories.length > 0 ? event.categories[0].name.toUpperCase() : "ÉVÉNEMENT"}

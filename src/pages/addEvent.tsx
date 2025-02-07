@@ -6,8 +6,8 @@ export function AddEventPage() {
   const createEvent = async (data: EventFormData) => {
     const file = data.image!;
 
-    // Vérifier la taille du fichier (par exemple 10MB)
-    const maxFileSize = 10 * 1024 * 1024; // 10MB
+    
+    const maxFileSize = 10 * 1024 * 1024; 
     if (file.size > maxFileSize) {
       alert("Le fichier est trop volumineux. Veuillez choisir un fichier plus petit.");
       return;

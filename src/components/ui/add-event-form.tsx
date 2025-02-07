@@ -28,7 +28,7 @@ export function AddEventForm({ onSubmit }: EventFormProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onSubmit(formData); // Soumettre les données via la fonction onSubmit
+    onSubmit(formData); 
       
   };
 

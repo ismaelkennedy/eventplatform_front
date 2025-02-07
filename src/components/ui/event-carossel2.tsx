@@ -1,8 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FiEdit, FiTrash2 } from "react-icons/fi"; // Import des icônes
-import api from "@/api/axiosConfig"; // Assure-toi que api est bien configuré
+import { FiEdit, FiTrash2 } from "react-icons/fi";
+import api from "@/api/axiosConfig"; 
 
 interface Event {
   id: number;
@@ -59,7 +59,7 @@ const EventsCarousel2 = () => {
         headers: { Authorization: `Bearer ${token}` },
       });
 
-      // Mise à jour de la liste après suppression
+      
       setEvents(events.filter(event => event.id !== eventId));
     } catch (error) {
       console.error("Erreur lors de la suppression de l'événement :", error);
@@ -92,13 +92,13 @@ const EventsCarousel2 = () => {
             </div>
 
             <div className="flex gap-3">
-              {/* Icône Modifier */}
+              
               <FiEdit
                 className="text-blue-400 hover:text-blue-600 cursor-pointer text-xl"
                 onClick={() => navigate(`/edit-event/${event.id}`)}
               />
 
-              {/* Icône Supprimer */}
+              
               <FiTrash2
                 className="text-red-400 hover:text-red-600 cursor-pointer text-xl"
                 onClick={() => handleDelete(event.id)}

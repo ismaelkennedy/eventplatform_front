@@ -2,8 +2,8 @@ import React from 'react'
 
 interface BoutonProps {
   label: string;
-  onClick?: () => void; // La fonction onClick est optionnelle
-  disabled?: boolean; // disabled est aussi optionnel
+  onClick?: () => void; 
+  disabled?: boolean; 
 }
 
 export default function Bouton({ label, onClick, disabled }: BoutonProps) {
@@ -11,8 +11,8 @@ export default function Bouton({ label, onClick, disabled }: BoutonProps) {
     <div>
       <button
         type="submit"
-        onClick={onClick} // Associe la fonction onClick
-        disabled={disabled} // Désactive le bouton si disabled est true
+        onClick={onClick} 
+        disabled={disabled} 
         className="mt-4 py-3 px-6 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white font-medium hover:opacity-90 transition-opacity"
       >
         {label}

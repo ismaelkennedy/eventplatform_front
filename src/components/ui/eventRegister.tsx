@@ -1,8 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import api from "@/api/axiosConfig"; // Assure-toi que api est bien configuré
-import { XCircle } from "lucide-react"; // Icône pour la désinscription
+import api from "@/api/axiosConfig"; 
+import { XCircle } from "lucide-react"; 
 
 interface Event {
   id: number;
@@ -63,7 +63,7 @@ const EventRegister = () => {
         headers: { Authorization: `Bearer ${token}` },
       });
 
-      // Met à jour la liste après la suppression
+      
       setEvents(events.filter(event => event.id !== eventId));
     } catch (error) {
       console.error("Erreur lors de la désinscription :", error);

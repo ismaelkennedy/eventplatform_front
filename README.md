@@ -1,50 +1,39 @@
-<!-- # React + TypeScript + Vite
+# Site de Gestion d'Événements
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bienvenue sur le projet de site de gestion d'événements MirEvent ! Ce projet permet de créer, gérer et promouvoir des événements. Il est destiné à une utilisation principalement par les jeunes, mais avec une possibilité d'extension vers des entreprises (ex. : bars, clubs, etc.) pour accroître leur chiffre d'affaires en attirant des clients et en prenant une commission.
 
-Currently, two official plugins are available:
+## Technologies utilisées
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Frontend** : React
+- **Backend** : Laravel
+- **Base de données** : MySQL
+- **Hébergement** : Local
+- **Authentification** : JWT (JSON Web Tokens)
+- **Gestion des événements** : CRUD complet pour créer, modifier, afficher, et supprimer des événements
 
-## Expanding the ESLint configuration
+## Prérequis
+ 
+Avant de commencer, vous devez avoir installé les outils suivants :
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- https://github.com/Melissa-mely/event_back (Back-END du projet)
+- https://react.dev/learn/installation
+- https://vite.dev/guide/
+- https://tailwindcss.com/docs/installation/using-vite
+- https://laravel.com/docs/11.x/installation
+- https://dev.mysql.com/downloads/installer/
 
-- Configure the top-level `parserOptions` property like this:
+## Installation
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+1. Clonez ce dépôt sur votre machine locale :
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+   git clone https://github.com/ismaelkennedy/eventplatform_front.git
+   cd eventplatform_front/
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+2. Installer les dépendances dans le repertoire eventplatform_front/:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-``` -->
+    npm install 
+    npm install axios (liaison avec le back)
+
+3. Lancer le projet :
+
+    npm run dev

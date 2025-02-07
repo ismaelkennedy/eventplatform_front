@@ -24,17 +24,17 @@ const Header = () => {
 
   return (
     <header className="pb-5 flex items-center justify-between w-full shadow-md">
-      {/* Logo avec lien vers la page d'accueil */}
+      
       <Link to="/">
         <img src={logo || "/placeholder.svg"} alt="MirEnvent Logo" />
       </Link>
 
-      {/* Barre de recherche */}
+      
       <SearchBar />
 
-      {/* Affichage dynamique en fonction de l'état de connexion */}
+      
       {user ? (
-        // Si connecté : Afficher le nom d'utilisateur + bouton de déconnexion
+        
         <div className="flex items-center space-x-4">
           <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full px-5 py-2 text-2xl">
             {user.username.charAt(0).toUpperCase()}
@@ -48,7 +48,7 @@ const Header = () => {
           </button>
         </div>
       ) : (
-        // Si NON connecté : Afficher les liens "Se connecter" et "S'inscrire"
+       
         <div className="space-x-4">
           <Link to="/login" className="text-white hover:underline">
             Se connecter

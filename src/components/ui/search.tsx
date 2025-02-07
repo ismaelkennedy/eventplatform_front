@@ -13,7 +13,7 @@ export default function SearchBar({ onSearch }: SearchBarProps) {
     const value = e.target.value;
     setQuery(value);
     if (onSearch) {
-      onSearch(value); // Appelle la fonction passée en prop
+      onSearch(value); 
     }
   };
 

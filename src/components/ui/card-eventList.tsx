@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-// import { Ticket } from 'lucide-react';
+
 
 interface Event {
     id: number;
@@ -15,7 +15,7 @@ interface MyComponentProps {
     categoryId: string;
 }
 
-const MyComponent: React.FC<MyComponentProps> = ({ categoryId }) => {
+const CardEventList: React.FC<MyComponentProps> = ({ categoryId }) => {
     const [events, setEvents] = useState<Event[]>([]);
     const navigate = useNavigate();
 
@@ -38,7 +38,7 @@ const MyComponent: React.FC<MyComponentProps> = ({ categoryId }) => {
                   className="relative w-[420.6px] h-[96.7px] rounded-lg p-2 shadow-xl cursor-pointer"
                   onClick={() => navigate(`/event/${event.id}`)}
               >
-                  {/* Partie gauche avec l'icône et les infos */}
+                  
                   <div className="flex items-center space-x-1">
                       <div className="flex flex-col space-y-1">
                           <h2 className="text-lg font-semibold text-white first-letter:uppercase" 
@@ -54,7 +54,7 @@ const MyComponent: React.FC<MyComponentProps> = ({ categoryId }) => {
                       </div>
                   </div>
 
-                  {/* Partie droite avec l'image */}
+                  
                   <div className="absolute right-0 top-0 w-[141.6px] h-[96.7px]">
                       <img 
                           src={event.image} 
@@ -69,4 +69,4 @@ const MyComponent: React.FC<MyComponentProps> = ({ categoryId }) => {
     );
 };
 
-export default MyComponent;
+export default CardEventList;

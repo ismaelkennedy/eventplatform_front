@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Eye, EyeOff, Pencil, Upload } from 'lucide-react';
 import avatarPlaceholder from '@/assets/tiakola-foreztival.jpg.webp';
-import Button from "@/components/ui/bouton"; // Import du bouton personnalisé
+import Button from "@/components/ui/bouton"; 
 
 const EditProfile: React.FC = () => {
   const [username, setUsername] = useState('JohnDoe');
@@ -13,13 +13,13 @@ const EditProfile: React.FC = () => {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [error, setError] = useState('');
 
-  // Typage explicite de `isEditing` avec `keyof`
+
   const [isEditing, setIsEditing] = useState<{ username: boolean; email: boolean }>({
     username: false,
     email: false,
   });
 
-  // Gestion de l'upload d'avatar
+
   const handleAvatarChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
       const file = URL.createObjectURL(e.target.files[0]);
@@ -27,7 +27,7 @@ const EditProfile: React.FC = () => {
     }
   };
 
-  // Fonction de sauvegarde
+
   const handleSave = () => {
     if (password !== confirmPassword) {
       setError("Les mots de passe ne correspondent pas");
@@ -42,7 +42,7 @@ const EditProfile: React.FC = () => {
       <div className="bg-black max-w-2xl w-full p-8 rounded-2xl shadow-xl border border-white/20">
         <h2 className="text-2xl font-bold text-center mb-4">Modifier le Profil</h2>
         
-        {/* Avatar */}
+        
         <div className="flex flex-col items-center mb-4">
           <img src={avatar} alt="Avatar" className="w-24 h-24 rounded-full border-4 border-gray-600 object-cover" />
           <label className="mt-2 flex items-center cursor-pointer text-sm text-gray-300 hover:text-blue-400">
@@ -51,7 +51,7 @@ const EditProfile: React.FC = () => {
           </label>
         </div>
         
-        {/* Champs modifiables */}
+        
         <div className="space-y-4">
           {[{ label: 'Nom d’utilisateur', value: username, setter: setUsername, field: 'username' },
             { label: 'Email', value: email, setter: setEmail, field: 'email' }
@@ -64,17 +64,17 @@ const EditProfile: React.FC = () => {
                   value={value}
                   onChange={(e) => setter(e.target.value)}
                   className="bg-transparent border-none focus:outline-none text-white text-lg font-bold w-full"
-                  readOnly={!isEditing[field]} // Si en mode édition, permettre la modification
+                  readOnly={!isEditing[field]} 
                 />
                 <Pencil
                   className="w-5 h-5 text-gray-400 cursor-pointer hover:text-blue-400"
-                  onClick={() => setIsEditing(prev => ({ ...prev, [field]: true }))} // Activer l'édition
+                  onClick={() => setIsEditing(prev => ({ ...prev, [field]: true }))} 
                 />
               </div>
             </div>
           ))}
 
-          {/* Mot de passe */}
+          
           {[{ label: 'Mot de passe', value: password, setter: setPassword, show: showPassword, setShow: setShowPassword },
             { label: 'Confirmer le mot de passe', value: confirmPassword, setter: setConfirmPassword, show: showConfirmPassword, setShow: setShowConfirmPassword }
           ].map(({ label, value, setter, show, setShow }, index) => (
@@ -97,10 +97,10 @@ const EditProfile: React.FC = () => {
           ))}
         </div>
         
-        {/* Affichage erreur */}
+        
         {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
         
-        {/* Bouton sauvegarde */}
+       
         <div className="w-full flex justify-center mt-6" onClick={handleSave}>
           <Button label="Enregistrer les modifications" />
         </div>

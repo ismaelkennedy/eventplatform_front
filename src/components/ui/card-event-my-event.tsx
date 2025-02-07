@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-// import { Ticket } from 'lucide-react';
+
 
 interface Event {
     id: number;
@@ -38,9 +38,9 @@ const MyComponent: React.FC<MyComponentProps> = ({ categoryId }) => {
                     className="relative w-[420.6px] h-[96.7px] rounded-lg flex justify-between p-2 shadow-xl my-4 cursor-pointer"
                     onClick={() => navigate(`/event/${event.id}`)}
                    >
-                        {/* Partie gauche avec l'icône et les infos */}
+                        
                         <div className="flex items-center space-x-1 absolute">
-                            {/* <Ticket className="mr-1 text-[#439DFE] rotate-90" width="50" height="50" /> */}
+                            
                             <div className="flex flex-col space-y-1">
                               <h2 className="text-lg font-semibold text-white first-letter:uppercase" 
                                   style={{ fontFamily: 'Inter, sans-serif', fontWeight: 'bold', fontSize: '18px', lineHeight: '24px' }}>
@@ -55,7 +55,6 @@ const MyComponent: React.FC<MyComponentProps> = ({ categoryId }) => {
                             </div>
                         </div>
 
-                        {/* Partie droite avec l'image */}
                         <div className="absolute right-0 top-0 w-[141.6px] h-[96.7px] ">
                           <img 
                             src={event.image} 

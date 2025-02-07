@@ -24,10 +24,10 @@ const LoginForm = () => {
         localStorage.setItem("token", response.data.token)
         localStorage.setItem("user", JSON.stringify(response.data.user))
         
-        // Récupère le rôle de l'utilisateur
+        
         const userRole = response.data.user.role
   
-        // Redirige en fonction du rôle de l'utilisateur
+        
         if (userRole === "organisateur") {
           navigate("/home-orga")
         } else {

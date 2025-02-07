@@ -43,7 +43,7 @@ export default function EventPage() {
     fetchEvent();
   }, [id]);
 
-  // Vérifier si l'utilisateur est inscrit à l'événement
+
   useEffect(() => {
     const checkParticipation = async () => {
       const token = localStorage.getItem("token");
@@ -67,14 +67,14 @@ export default function EventPage() {
     const token = localStorage.getItem("token");
 
     if (!token) {
-      // Redirige vers la page de login si l'utilisateur n'est pas connecté
+      
       navigate("/login");
       return;
     }
 
     try {
       if (isParticipating) {
-        // Désinscrire l'utilisateur de l'événement
+        
         await axios.delete(
           `http://127.0.0.1:8000/api/events/${id}/unregister`, 
           { headers: { Authorization: `Bearer ${token}` } }
@@ -82,7 +82,7 @@ export default function EventPage() {
         setIsParticipating(false);
         alert("Désinscription réussie");
       } else {
-        // Inscrire l'utilisateur à l'événement
+        
         await axios.post(
           `http://127.0.0.1:8000/api/events/${id}/register`, 
           {},
@@ -100,7 +100,7 @@ export default function EventPage() {
   if (error) return <p className="text-red-500 text-center">{error}</p>;
   if (!eventData) return null;
 
-  // Transformer la date "2025-03-20" en { day: "20", month: "Mars" }
+  
   const formatDate = (dateString: string) => {
     const dateObj = new Date(dateString);
     const months = [

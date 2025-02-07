@@ -1,4 +1,4 @@
-import Backbutton from "./back-buttton"
+
 
 interface EventHeaderProps {
   image: string
@@ -36,7 +36,7 @@ const EventHeader = ({ image, type, title, date ,location}: EventHeaderProps) =>
             <h1 className="text-white text-3xl font-bold mt-2">{title}</h1>
             <h1 className="text-gray-500 text-xl font-extralight">{location}</h1>
           </div>
-          <div className="w-1/2">{/* You can add additional content here if needed */}</div>
+          
         </div>
       </div>
     </div>

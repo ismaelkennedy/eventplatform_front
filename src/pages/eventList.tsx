@@ -7,13 +7,13 @@ export default function EventListPage() {
     const [categories, setCategories] = useState<{ id: number, name: string }[]>([]);
     const [activeCategory, setActiveCategory] = useState<string>("");
 
-    // Récupérer les catégories depuis l'API Laravel
+    
     useEffect(() => {
         axios.get("http://127.0.0.1:8000/api/categories")
             .then(response => {
                 setCategories(response.data);
                 if (response.data.length > 0) {
-                    setActiveCategory(response.data[0].id.toString()); // Sélectionne la première catégorie par défaut
+                    setActiveCategory(response.data[0].id.toString()); 
                 }
             })
             .catch(error => console.error("Erreur lors du chargement des catégories :", error));

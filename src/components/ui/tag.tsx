@@ -1,7 +1,7 @@
 import { ChevronDown } from "lucide-react";
 
 interface Category {
-  id: number; // Change id en number
+  id: number; 
   name: string;
 }
 
