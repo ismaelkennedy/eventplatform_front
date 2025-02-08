@@ -32,7 +32,6 @@ Avant de commencer, vous devez avoir installé les outils suivants :
 2. Installer les dépendances dans le repertoire eventplatform_front/:
 
     npm install 
-    npm install axios (liaison avec le back)
 
 3. Lancer le projet :
 
