@@ -10,7 +10,8 @@ import { BgLayout } from "./components/ui/layouts/background";
 import EventListPage from "./pages/eventList";
 import UpdatePage from "./pages/updateProfile";
 import HomePageOrga from "./pages/homeOrga";
-import { AddEventPage } from "./pages/addEvent";
+import AddEventPage from "./pages/addEvent";
+
 
 
 export default function App() {
